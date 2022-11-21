@@ -16,6 +16,7 @@
     <link rel="preload" as="font" crossorigin href="/fonts/google-sans-v2003/medium/latin.woff2">
 
     {% InlineCss '/css/main.css' %}
+    {% block css %}{% endblock %}
 
     <script type="module" src="{{ helpers.hashForProd('/js/main.js') }}"></script>
     {% if process.env.NODE_ENV === 'production' %}
@@ -86,8 +87,6 @@
     </div>
     {% include 'partials/cookie-banner.njk' %}
 
-    {% block chromescripts %}{% endblock %}
-
-    {% block chromeanalytics %}{% endblock %}
+    {% block scripts %}{% endblock %}
   </body>
 </html>
