@@ -170,6 +170,7 @@ module.exports = eleventyConfig => {
       jsPaths: [
         path.join(__dirname, 'dist/js/**/*.js'),
       ],
+      pool: true,
       insert: (content, result) => {
         return content.replace('</head>', `<style>${result}</style></head>`)
       }
